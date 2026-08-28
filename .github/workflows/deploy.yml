@@ -82,8 +82,9 @@ jobs:
         with:
           context: .
           push: true
+          provenance: false
           tags: |
-            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
             ${{ env.IMAGE_NAME }}:latest
 
       - name: Set up Python
@@ -101,9 +102,9 @@ jobs:
       - name: Promote staging image
         working-directory: infrastructure
         run: |
-          ./scripts/update-image-tag.sh demowebou "${{ env.IMAGE_NAME }}:${{ github.sha }}"
+          ./scripts/update-image-tag.sh demowebou "${{ env.IMAGE_NAME }}:sha-${{ github.sha }}"
           git config user.name github-actions
           git config user.email github-actions@users.noreply.github.com
           git add "${{ env.INFRA_PATCH_FILE }}"
-          git commit -m "chore: promote demowebou image ${{ github.sha }}" || exit 0
+          git commit -m "chore: promote demowebou image sha-${{ github.sha }}" || exit 0
           git push
