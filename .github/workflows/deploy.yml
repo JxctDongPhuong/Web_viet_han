@@ -1,4 +1,4 @@
-name: Landing Page CI/CD
+name: Demo Ou Web CI/CD
 
 on:
   pull_request:
