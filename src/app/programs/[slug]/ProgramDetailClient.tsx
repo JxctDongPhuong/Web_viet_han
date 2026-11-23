@@ -26,16 +26,16 @@ export default function ProgramDetailClient({ program }: { program: Program }) {
                   variant={
                     program.category === "korean"
                       ? "korean"
-                      : program.category === "japanese"
-                      ? "japanese"
+                      : program.category === "topik"
+                      ? "topik"
                       : "exchange"
                   }
                   className="bg-white/90 text-neutral-900 border-none font-semibold text-xs"
                 >
                   {program.category === "korean"
-                    ? "🇰🇷 Hàn Quốc"
-                    : program.category === "japanese"
-                    ? "🇯🇵 Nhật Bản"
+                    ? "🇰🇷 Tiếng Hàn"
+                    : program.category === "topik"
+                    ? "🎯 Luyện thi TOPIK"
                     : "🔄 Trao đổi quốc tế"}
                 </Badge>
                 <span className="text-sm bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-medium">

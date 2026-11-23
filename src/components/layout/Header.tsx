@@ -48,14 +48,14 @@ export default function Header() {
             className="flex items-center gap-3 group"
           >
             <div className="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white font-heading font-bold text-lg group-hover:bg-primary-600 transition-colors">
-              VHN
+              VH
             </div>
             <div className="hidden sm:block">
-              <p className="font-heading font-bold text-sm leading-tight text-primary-900">
+              <p suppressHydrationWarning className="font-heading font-bold text-sm leading-tight text-primary-900">
                 {locale === "vi" ? "Trung Tâm" : "Center"}
               </p>
-              <p className="font-heading font-semibold text-xs text-primary-600">
-                {locale === "vi" ? "Việt Hàn Nhật" : "Vietnam-Korea-Japan"}
+              <p suppressHydrationWarning className="font-heading font-semibold text-xs text-primary-600">
+                {locale === "vi" ? "Việt - Hàn" : "Vietnam - Korea"}
               </p>
             </div>
           </Link>
@@ -76,7 +76,8 @@ export default function Header() {
                       : "text-neutral-700 hover:text-primary-500 hover:bg-neutral-50"
                   }`}
                 >
-                  {navLabels[i]}
+                  {/* Bọc span chống lỗi Hydration ở đây */}
+                  <span suppressHydrationWarning>{navLabels[i]}</span>
                 </Link>
               );
             })}
@@ -90,7 +91,8 @@ export default function Header() {
               aria-label="Toggle language"
             >
               <Globe className="w-4 h-4 text-primary-500" />
-              <span>{locale === "vi" ? "EN" : "VI"}</span>
+              {/* Bọc span chống lỗi Hydration ở đây */}
+              <span suppressHydrationWarning>{locale === "vi" ? "EN" : "VI"}</span>
             </button>
 
             <button
@@ -140,7 +142,8 @@ export default function Header() {
                             : "text-neutral-700 hover:bg-neutral-50"
                         }`}
                       >
-                        {navLabels[i]}
+                        {/* Bọc span chống lỗi Hydration ở đây */}
+                        <span suppressHydrationWarning>{navLabels[i]}</span>
                       </Link>
                     </motion.div>
                   );

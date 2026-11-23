@@ -20,11 +20,11 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 export const metadata: Metadata = {
   title: {
-    default: "Trung Tâm Việt Hàn Nhật - Trường Đại học Mở TP.HCM",
-    template: "%s | Trung Tâm Việt Hàn Nhật",
+    default: "Trung Tâm Việt - Hàn - Trường Đại học Mở TP.HCM",
+    template: "%s | Trung Tâm Việt - Hàn",
   },
   description:
-    "Trung tâm giao lưu văn hóa Việt Nam - Hàn Quốc - Nhật Bản, trực thuộc Trường Đại học Mở TP.HCM",
+    "Trung tâm giao lưu văn hóa và hợp tác giáo dục Việt Nam - Hàn Quốc, trực thuộc Trường Đại học Mở TP.HCM",
 };
 
 export default function RootLayout({

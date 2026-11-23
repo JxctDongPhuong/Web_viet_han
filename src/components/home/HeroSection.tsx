@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/layout/Container";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -23,9 +24,20 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100/80 text-primary-800 text-xs sm:text-sm font-semibold mb-6 border border-primary-200/50">
-              <span className="w-2 h-2 rounded-full bg-primary-600 animate-pulse" />
-              Đại học Mở TP.HCM
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-sm text-primary-900 shadow-xs border border-primary-200/70 mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary-600 animate-pulse shrink-0" />
+              <Image
+                src="/Logo.png"
+                alt="Trường Đại học Mở TP.HCM"
+                width={120}
+                height={22}
+                className="h-5 sm:h-5.5 w-auto object-contain"
+                priority
+              />
+              <span className="w-px h-3.5 bg-neutral-200" />
+              <span className="font-heading font-bold text-xs sm:text-sm text-primary-900 tracking-tight">
+                Đại học Mở TP.HCM
+              </span>
             </div>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 leading-[1.15] mb-6 tracking-tight">
               {t.hero.title}
@@ -62,13 +74,12 @@ export default function HeroSection() {
                   <div className="flex gap-2 text-2xl">
                     <span>🇻🇳</span>
                     <span>🇰🇷</span>
-                    <span>🇯🇵</span>
                   </div>
                 </div>
 
                 <div className="relative z-10 my-auto text-center py-6">
                   <p className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight text-white mb-2">
-                    VIỆT • HÀN • NHẬT
+                    VIỆT • HÀN
                   </p>
                   <p className="text-primary-200 text-sm sm:text-base font-medium">
                     Giao lưu văn hóa & Hợp tác giáo dục quốc tế

@@ -4,7 +4,7 @@ import { ArrowLeft, Calendar, Tag, Share2 } from "lucide-react";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
-import type { NewsArticle } from "@/data/news";
+import type { NewsArticle } from "@/data/news"; // Đảm bảo trong file này đã thêm trường content và contentEn
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function NewsDetailClient({ article }: { article: NewsArticle }) {
@@ -14,11 +14,12 @@ export default function NewsDetailClient({ article }: { article: NewsArticle }) 
     <section className="section-padding bg-white">
       <Container className="max-w-4xl">
         <Button href="/news" variant="ghost" size="sm" className="mb-8">
-          <ArrowLeft className="w-4 h-4" /> {t.nav.news}
+          <ArrowLeft className="w-4 h-4" /> {t.nav?.news || "Tin tức"}
         </Button>
 
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
+            {/* Nếu bạn đã thêm cột categoryEn, bạn có thể sửa thành: locale === "vi" ? article.category : article.categoryEn */}
             <Badge>{article.category}</Badge>
             <span className="text-sm text-neutral-500 flex items-center gap-1.5 font-medium">
               <Calendar className="w-4 h-4 text-primary-500" />
@@ -30,17 +31,17 @@ export default function NewsDetailClient({ article }: { article: NewsArticle }) 
             onClick={() => {
               if (navigator.share) {
                 navigator.share({
-                  title: article.title,
+                  title: locale === "vi" ? article.title : article.titleEn,
                   url: window.location.href,
                 });
               } else {
                 navigator.clipboard.writeText(window.location.href);
-                alert("Đã sao chép liên kết vào bộ nhớ tạm!");
+                alert(locale === "vi" ? "Đã sao chép liên kết vào bộ nhớ tạm!" : "Link copied to clipboard!");
               }
             }}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-neutral-600 bg-neutral-100 hover:bg-neutral-200 transition-colors cursor-pointer"
           >
-            <Share2 className="w-3.5 h-3.5" /> Chia sẻ
+            <Share2 className="w-3.5 h-3.5" /> {locale === "vi" ? "Chia sẻ" : "Share"}
           </button>
         </div>
 
@@ -60,35 +61,20 @@ export default function NewsDetailClient({ article }: { article: NewsArticle }) 
             {locale === "vi" ? article.excerpt : article.excerptEn}
           </p>
 
-          <p>
-            {article.content}
-          </p>
-
-          <p>
-            Nhằm mục tiêu tạo điều kiện tốt nhất cho học viên và các bạn sinh
-            viên có nguyện vọng nghiên cứu ngôn ngữ, tham gia các kỳ thi chuẩn hóa
-            quốc tế cũng như ứng tuyển các suất học bổng toàn phần, Trung Tâm
-            Việt Hàn Nhật thường xuyên tổ chức các buổi tư vấn chuyên sâu và hỗ
-            trợ hoàn thiện hồ sơ đăng ký.
-          </p>
-
-          <h2 className="text-2xl font-bold font-heading text-neutral-900 mt-8 mb-4">
-            Thông tin liên hệ & Hỗ trợ học viên
-          </h2>
-          <p>
-            Mọi thắc mắc về chương trình đào tạo hoặc quy trình nộp hồ sơ, quý phụ
-            huynh và học viên vui lòng liên hệ trực tiếp qua Văn phòng Trung tâm
-            hoặc đường dây nóng để được giải đáp kịp thời.
-          </p>
+          {/* ĐÂY LÀ PHẦN QUAN TRỌNG NHẤT ĐÃ ĐƯỢC SỬA */}
+          {/* Lớp whitespace-pre-wrap giúp giữ lại các khoảng xuống dòng từ Google Sheets */}
+          <div className="whitespace-pre-wrap">
+            {locale === "vi" ? article.content : article.contentEn}
+          </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-neutral-500">
             <Tag className="w-4 h-4 text-primary-500" />
-            <span>Chủ đề: {article.category}</span>
+            <span>{locale === "vi" ? "Chủ đề:" : "Topic:"} {article.category}</span>
           </div>
           <Button href="/admissions" size="md">
-            Đăng ký tham gia ngay
+            {locale === "vi" ? "Đăng ký tham gia ngay" : "Register Now"}
           </Button>
         </div>
       </Container>

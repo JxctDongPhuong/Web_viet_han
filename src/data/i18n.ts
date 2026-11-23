@@ -35,7 +35,7 @@ export interface TranslationSchema {
     title: string;
     all: string;
     korean: string;
-    japanese: string;
+    topik: string;
     exchange: string;
     duration: string;
     viewDetails: string;
@@ -100,8 +100,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       contact: "Liên hệ",
     },
     hero: {
-      title: "Trung Tâm Việt Hàn Nhật",
-      subtitle: "Cầu nối văn hóa Việt Nam • Hàn Quốc • Nhật Bản",
+      title: "Trung Tâm Việt - Hàn",
+      subtitle: "Cầu nối văn hóa & giáo dục Việt Nam • Hàn Quốc",
       cta1: "Khám phá chương trình",
       cta2: "Liên hệ tư vấn",
     },
@@ -123,9 +123,9 @@ export const translations: Record<Locale, TranslationSchema> = {
     programs: {
       title: "Chương trình đào tạo",
       all: "Tất cả",
-      korean: "Hàn Quốc",
-      japanese: "Nhật Bản",
-      exchange: "Trao đổi",
+      korean: "Tiếng Hàn",
+      topik: "Luyện thi TOPIK",
+      exchange: "Trao đổi sinh viên",
       duration: "Thời lượng",
       viewDetails: "Xem chi tiết",
     },
@@ -163,11 +163,11 @@ export const translations: Record<Locale, TranslationSchema> = {
       officeHoursValue: "Thứ 2 - Thứ 6: 8:00 - 17:00",
     },
     footer: {
-      description: "Trung tâm giao lưu văn hóa Việt Nam - Hàn Quốc - Nhật Bản, trực thuộc Trường Đại học Mở TP.HCM",
+      description: "Trung tâm giao lưu văn hóa và hợp tác giáo dục Việt Nam - Hàn Quốc, trực thuộc Trường Đại học Mở TP.HCM",
       quickLinks: "Liên kết nhanh",
       programs: "Chương trình",
       contactInfo: "Liên hệ",
-      copyright: "© 2026 Trung Tâm Việt Hàn Nhật - Trường Đại học Mở TP.HCM",
+      copyright: "© 2026 Trung Tâm Việt - Hàn - Trường Đại học Mở TP.HCM",
     },
     stats: {
       students: "Học viên",
@@ -187,8 +187,8 @@ export const translations: Record<Locale, TranslationSchema> = {
       contact: "Contact",
     },
     hero: {
-      title: "Vietnam-Korea-Japan Center",
-      subtitle: "Bridging Cultures: Vietnam • Korea • Japan",
+      title: "Vietnam - Korea Center",
+      subtitle: "Bridging Cultures: Vietnam • Korea",
       cta1: "Explore Programs",
       cta2: "Contact Us",
     },
@@ -210,9 +210,9 @@ export const translations: Record<Locale, TranslationSchema> = {
     programs: {
       title: "Training Programs",
       all: "All",
-      korean: "Korean",
-      japanese: "Japanese",
-      exchange: "Exchange",
+      korean: "Korean Language",
+      topik: "TOPIK Preparation",
+      exchange: "Student Exchange",
       duration: "Duration",
       viewDetails: "View Details",
     },
@@ -250,11 +250,11 @@ export const translations: Record<Locale, TranslationSchema> = {
       officeHoursValue: "Monday - Friday: 8:00 AM - 5:00 PM",
     },
     footer: {
-      description: "Vietnam-Korea-Japan Cultural Exchange Center under Ho Chi Minh City Open University",
+      description: "Vietnam - Korea Cultural & Educational Exchange Center under Ho Chi Minh City Open University",
       quickLinks: "Quick Links",
       programs: "Programs",
       contactInfo: "Contact",
-      copyright: "© 2026 Vietnam-Korea-Japan Center - HCMC Open University",
+      copyright: "© 2026 Vietnam - Korea Center - HCMC Open University",
     },
     stats: {
       students: "Students",

@@ -8,9 +8,9 @@ const partners = [
   { name: "Seoul National University", country: "🇰🇷 Hàn Quốc" },
   { name: "Korea University", country: "🇰🇷 Hàn Quốc" },
   { name: "Yonsei University", country: "🇰🇷 Hàn Quốc" },
-  { name: "University of Tokyo", country: "🇯🇵 Nhật Bản" },
-  { name: "Osaka University", country: "🇯🇵 Nhật Bản" },
-  { name: "Kyoto University", country: "🇯🇵 Nhật Bản" },
+  { name: "Sungkyunkwan University", country: "🇰🇷 Hàn Quốc" },
+  { name: "Hanyang University", country: "🇰🇷 Hàn Quốc" },
+  { name: "Pusan National University", country: "🇰🇷 Hàn Quốc" },
 ];
 
 export default function PartnersSection() {

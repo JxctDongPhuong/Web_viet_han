@@ -3,16 +3,39 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
+import { useState, useEffect } from "react"; // Thêm dòng này
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
-import { newsArticles } from "@/data/news";
+import { getNewsArticles, type NewsArticle } from "@/data/news"; // Import thêm type
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function LatestNews() {
   const { locale, t } = useLanguage();
-  const latest = newsArticles.slice(0, 3);
+  
+  // Tạo state để lưu trữ danh sách tin tức
+  const [latest, setLatest] = useState<NewsArticle[]>([]);
+
+  // Dùng useEffect để gọi API khi component được render trên trình duyệt
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const articles = await getNewsArticles();
+        // Lấy 3 bài viết mới nhất và đưa vào state
+        setLatest(articles.slice(0, 3));
+      } catch (error) {
+        console.error("Lỗi khi tải tin tức mới nhất:", error);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  // Nếu dữ liệu chưa tải xong, có thể trả về null hoặc một giao diện loading (tùy chọn)
+  if (latest.length === 0) {
+    return null; 
+  }
 
   return (
     <section className="section-padding bg-neutral-50/60">

@@ -18,16 +18,16 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-accent-400 flex items-center justify-center text-primary-900 font-heading font-bold text-lg">
-                VHN
+                VH
               </div>
               <div>
                 <p className="font-heading font-bold text-sm">Trung Tâm</p>
                 <p className="font-heading font-semibold text-xs text-primary-200">
-                  Việt Hàn Nhật
+                  Việt - Hàn
                 </p>
               </div>
             </div>
-            <p className="text-primary-200 text-sm leading-relaxed mb-4">
+            <p suppressHydrationWarning className="text-primary-200 text-sm leading-relaxed mb-4">
               {t.footer.description}
             </p>
             <div className="flex gap-3">
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-accent-400">
+            <h3 suppressHydrationWarning className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-accent-400">
               {t.footer.quickLinks}
             </h3>
             <ul className="space-y-2">
@@ -64,7 +64,7 @@ export default function Footer() {
                     href={item.href}
                     className="text-primary-200 hover:text-white text-sm transition-colors"
                   >
-                    {item.label}
+                    <span suppressHydrationWarning>{item.label}</span>
                   </Link>
                 </li>
               ))}
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Column 3: Programs */}
           <div>
-            <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-accent-400">
+            <h3 suppressHydrationWarning className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-accent-400">
               {t.footer.programs}
             </h3>
             <ul className="space-y-2">
@@ -82,7 +82,7 @@ export default function Footer() {
                   href="/programs"
                   className="text-primary-200 hover:text-white text-sm transition-colors"
                 >
-                  🇰🇷 Hàn Quốc học
+                  🇰🇷 Tiếng Hàn & Văn hóa
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ export default function Footer() {
                   href="/programs"
                   className="text-primary-200 hover:text-white text-sm transition-colors"
                 >
-                  🇯🇵 Nhật Bản học
+                  🎯 Luyện thi TOPIK
                 </Link>
               </li>
               <li>
@@ -98,7 +98,7 @@ export default function Footer() {
                   href="/programs"
                   className="text-primary-200 hover:text-white text-sm transition-colors"
                 >
-                  🔄 Chương trình trao đổi
+                  🔄 Trao đổi & Du học Hàn Quốc
                 </Link>
               </li>
             </ul>
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-accent-400">
+            <h3 suppressHydrationWarning className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-accent-400">
               {t.footer.contactInfo}
             </h3>
             <ul className="space-y-3">
@@ -130,7 +130,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-primary-800">
         <Container className="py-4">
-          <p className="text-center text-primary-300 text-xs">
+          <p suppressHydrationWarning className="text-center text-primary-300 text-xs">
             {t.footer.copyright}
           </p>
         </Container>

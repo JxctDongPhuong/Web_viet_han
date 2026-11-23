@@ -2,14 +2,14 @@ import { cn } from "@/lib/utils";
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "default" | "korean" | "japanese" | "exchange";
+  variant?: "default" | "korean" | "topik" | "exchange";
   className?: string;
 }
 
 const badgeVariants = {
   default: "bg-neutral-100 text-neutral-700",
   korean: "bg-red-50 text-red-700 border border-red-200/50",
-  japanese: "bg-pink-50 text-pink-700 border border-pink-200/50",
+  topik: "bg-amber-50 text-amber-700 border border-amber-200/50",
   exchange: "bg-blue-50 text-blue-700 border border-blue-200/50",
 };
 
